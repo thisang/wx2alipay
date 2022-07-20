@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支付宝领大额红包</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+  var isAndroid, isIOS, UA;
+  const token = '19611098fnm9wzrx8lx56e12yD'
+  var url = `https://ulink.alipay.com/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FsaId%3D10000007%26clientVersion%3D3.7.0.0718%26qrcode%3Dhttps%253A%252F%252Frender.alipay.com%252Fp%252Fc%252Falipay-red-qrcode%252Fshared.html%253Fchannel%253Dsearch_pwd%2526shareId%253D2088412285059327%2526token%253D${token}%2526campStr%253DkPPFvOxaCL3f85TiKss2wsBZgIjulHjG%2526sign%253DFa3GxuuYUoUP5ueA5H%2520HiURzSuwujfEL9Zl2YjaRVEY%253D%2526chInfo%253DDingtalk%2526c_stype%253Dsearch_pwd`;
+  document.querySelector('body').addEventListener('touchmove', function (event) {
+    event.preventDefault();
+  });
+
+  window.mobileUtil = (function (win, doc) {
+    UA = navigator.userAgent, isAndroid = /android|adr/gi.test(UA), isIOS = /iphone|ipod|ipad/gi.test(UA) && !
+      isAndroid, isBlackBerry = /BlackBerry/i.test(UA), isWindowPhone =
+      /IEMobile/i.test(UA), isMobile = isAndroid || isIOS || isBlackBerry || isWindowPhone;
+    return {
+      isAndroid: isAndroid,
+      isIOS: isIOS,
+      isMobile: isMobile,
+      isWeixin: /MicroMessenger/gi.test(UA),
+      isQQ: /QQ/gi.test(UA)
+    };
+  })(window,
+    document);
+  if (mobileUtil.isWeixin) {
+    if (isIOS) {
+      window.location.replace(url);
+    }
+  } else {
+    window.location.replace(url);
+  }
+
+  function showts() {
+    if (isIOS) {
+      window.location.replace(url);
+    }
+    if (isWeiXin() && isAndroid) {
+      document.getElementById('ts').style.display = 'block'
+    }
+    if (!isWeiXin() && isAndroid) {
+      window.location.replace(url);
+    }
+
+  }
+</script>
+
+</html>
