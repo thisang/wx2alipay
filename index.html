@@ -1,57 +1,171 @@
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>支付宝领大额红包</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>跳转页...</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta name="format-detection" content="telephone=no">
+  <meta content="false" name="twcClient" id="twcClient">
+  <link rel="icon" href="https://yrxdns-1306142337.cos.ap-beijing.myqcloud.com/images/ico-zf.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://yrxdns-1306142337.cos.ap-beijing.myqcloud.com/images/ico-zf.ico"
+    type="image/x-icon">
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%
+    }
+
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      background-color: #fff
+    }
+
+    .top-bar-guidance {
+      font-size: 15px;
+      color: #fff;
+      height: 40%;
+      line-height: 1.8;
+      padding-left: 20px;
+      padding-top: 20px;
+      background: url(/images/tishi.png) center top/contain no-repeat
+    }
+
+    .top-bar-guidance .icon-safari {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      margin: 0 .2em
+    }
+
+    .app-download-btn {
+      display: block;
+      width: 214px;
+      height: 40px;
+      line-height: 40px;
+      margin: 18px auto 0 auto;
+      text-align: center;
+      font-size: 18px;
+      color: #2466f4;
+      border-radius: 20px;
+      border: .5px #2466f4 solid;
+      text-decoration: none
+    }
+  </style>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      background: #fcf4ec;
+    }
+
+    #bg {
+      width: 100%;
+      height: 100%;
+      background: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-748b492f-70fe-4785-845b-13284d3d4208/fe3f0a8c-1874-4695-8c32-22ee9cd49e31.jpeg) no-repeat;
+      background-size: 100%;
+      position: fixed;
+      top: 0;
+    }
+
+    #ts {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      padding-top: 100px;
+      background: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-748b492f-70fe-4785-845b-13284d3d4208/52dad01a-ff4d-48d9-924e-295ff0b58d5d.png) no-repeat;
+      background-size: 100%;
+      background-color: #fff;
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
+  <a onclick="showts()" id="copy" style="-webkit-tap-highlight-color:rgba(255,0,0,0);">
+    <div id="bg"></div>
+    <div id="ts">
+
+    </div>
+  </a>
+  <script type="text/javascript">
+    function isWeiXin() {
+      var ua =
+        window.navigator.userAgent.toLowerCase();
+      if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  </script>
+
+  <div class="top-bar-guidance">
+    <p> 如果没有自动打开APP，请点击右上角的三点
+    </p>
+    <p>选择<img src="./images/ca7b77fb-1af4-460b-8352-6bf2675e59e8.png" class="icon-safari">
+      &lt;在浏览器中》打开， </p>
+    <p> 可以继续访问本站哦~ </p>
+  </div> <a class="app-download-btn" id="BtnClick" href="javascript:;">点击打开支付宝领红包 </a><br>
+  <center>如果出现《QQ浏览器安全下载》的提示<p>请选择《其他方式下载》</p>
+  </center>
+  <script>
+    var isAndroid, isIOS, UA
+    // var url = 'https://ulink.alipay.com/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FsaId%3D10000007%26clientVersion%3D3.7.0.0718%26qrcode%3Dhttps%253A%252F%252Frender.alipay.com%252Fp%252Fc%252Falipay-red-qrcode%252Fshared.html%253Fchannel%253Dsearch_pwd%2526shareId%253D2088412285059327%2526token%253D19616253m9ddgf1xqvdzq99%2526campStr%253DkPPFvOxaCL3f85TiKss2wsBZgIjulHjG%2526sign%253DFa3GxuuYUoUP5ueA5H%2520HiURzSuwujfEL9Zl2YjaRVEY%253D%2526chInfo%253DDingtalk%2526c_stype%253Dsearch_pwd';
+    const url = "https://ulink.alipay.com/?scheme=alipayqr://platformapi/startapp?keyword=784762463"
+    document.querySelector('body').addEventListener('touchmove', function (event) {
+      event.preventDefault();
+    });
+    window.mobileUtil = (function (win, doc) {
+      UA = navigator.userAgent, isAndroid = /android|adr/gi.test(UA), isIOS = /iphone|ipod|ipad/gi.test(UA) && !
+        isAndroid, isBlackBerry = /BlackBerry/i.test(UA), isWindowPhone =
+        /IEMobile/i.test(UA), isMobile = isAndroid || isIOS || isBlackBerry || isWindowPhone;
+      return {
+        isAndroid: isAndroid,
+        isIOS: isIOS,
+        isMobile: isMobile,
+        isWeixin: /MicroMessenger/gi.test(UA),
+        isQQ: /QQ/gi.test(UA)
+      };
+    })(window,
+      document);
+    if (mobileUtil.isWeixin) {
+      if (isIOS) {
+        window.location.replace(url);
+      }
+    } else {
+      window.location.replace(url);
+    }
+
+    function showts() {
+      if (isIOS) {
+        window.location.replace(url);
+      }
+      if (isWeiXin() && isAndroid) {
+        document.getElementById('ts').style.display = 'block'
+      }
+      if (!isWeiXin() && isAndroid) {
+        window.location.replace(url);
+      }
+
+    }
+    //setTimeout('WeixinJSBridge.invoke("closeWindow", {部分源码来自网络，由  收集整理并二次开发，版权归原作者所有。}, function(e){ }) ', 5000);
+  </script>
+
 
 </body>
-
-<script>
-  var isAndroid, isIOS, UA;
-  const token = '19611098fnm9wzrx8lx56e12yD'
-  var url = `https://ulink.alipay.com/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FsaId%3D10000007%26clientVersion%3D3.7.0.0718%26qrcode%3Dhttps%253A%252F%252Frender.alipay.com%252Fp%252Fc%252Falipay-red-qrcode%252Fshared.html%253Fchannel%253Dsearch_pwd%2526shareId%253D2088412285059327%2526token%253D${token}%2526campStr%253DkPPFvOxaCL3f85TiKss2wsBZgIjulHjG%2526sign%253DFa3GxuuYUoUP5ueA5H%2520HiURzSuwujfEL9Zl2YjaRVEY%253D%2526chInfo%253DDingtalk%2526c_stype%253Dsearch_pwd`;
-  document.querySelector('body').addEventListener('touchmove', function (event) {
-    event.preventDefault();
-  });
-
-  window.mobileUtil = (function (win, doc) {
-    UA = navigator.userAgent, isAndroid = /android|adr/gi.test(UA), isIOS = /iphone|ipod|ipad/gi.test(UA) && !
-      isAndroid, isBlackBerry = /BlackBerry/i.test(UA), isWindowPhone =
-      /IEMobile/i.test(UA), isMobile = isAndroid || isIOS || isBlackBerry || isWindowPhone;
-    return {
-      isAndroid: isAndroid,
-      isIOS: isIOS,
-      isMobile: isMobile,
-      isWeixin: /MicroMessenger/gi.test(UA),
-      isQQ: /QQ/gi.test(UA)
-    };
-  })(window,
-    document);
-  if (mobileUtil.isWeixin) {
-    if (isIOS) {
-      window.location.replace(url);
-    }
-  } else {
-    window.location.replace(url);
-  }
-
-  function showts() {
-    if (isIOS) {
-      window.location.replace(url);
-    }
-    if (isWeiXin() && isAndroid) {
-      document.getElementById('ts').style.display = 'block'
-    }
-    if (!isWeiXin() && isAndroid) {
-      window.location.replace(url);
-    }
-
-  }
-</script>
 
 </html>
